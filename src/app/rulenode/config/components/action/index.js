@@ -33,6 +33,7 @@ import MsgDelayConfigDirective from './msg-delay-config.directive';
 import MsgCountConfigDirective from './msg-count-config.directive';
 import AssignToCustomerConfigDirective from './assign-customer-config.directive';
 import UnAssignToCustomerConfigDirective from './unassign-customer-config.directive';
+import BusinessCentralApiCallConfigDirective from './businesscentral-api-call-config.directive';
 
 export default angular.module('thingsboard.ruleChain.config.action', [])
     .directive('tbActionNodeTimeseriesConfig', TimeseriesConfigDirective)
@@ -44,6 +45,7 @@ export default angular.module('thingsboard.ruleChain.config.action', [])
     .directive('tbActionNodeRpcReplyConfig', RpcReplyConfigDirective)
     .directive('tbActionNodeRpcRequestConfig', RpcRequestConfigDirective)
     .directive('tbActionNodeRestApiCallConfig', RestApiCallConfigDirective)
+    .directive('tbActionNodeBusinessCentralApiCallConfig', BusinessCentralApiCallConfigDirective)
     .directive('tbActionNodeKafkaConfig', KafkaConfigDirective)
     .directive('tbActionNodeSnsConfig', SnsConfigDirective)
     .directive('tbActionNodeSqsConfig', SqsConfigDirective)

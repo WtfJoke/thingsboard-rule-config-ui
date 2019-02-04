@@ -18,13 +18,16 @@
 
 import businessCentralApiCallConfigForm from './businesscentral-api-call-config.tpl.html';
 
+
 /* eslint-enable import/no-unresolved, import/default */
+/* eslint no-console: ["error", { allow: ["warn", "error", "log"] }] */
 
 /*@ngInject*/
-export default function BusinessCentralApiCallConfigDirective($compile, ruleNodeTypes) {
+export default function BusinessCentralApiCallConfigDirective($compile, ruleNodeTypes, $http, $window) {
 
     var linker = function (scope, element, attrs, ngModelCtrl) {
         var template = businessCentralApiCallConfigForm;
+        scope.authLinkName = "Authorize";
         element.html(template);
 
         scope.ruleNodeTypes = ruleNodeTypes;
@@ -38,6 +41,15 @@ export default function BusinessCentralApiCallConfigDirective($compile, ruleNode
         ngModelCtrl.$render = function () {
             scope.configuration = ngModelCtrl.$viewValue;
         };
+     
+        var authLinkPromise = $http.get("api/v1/bclink");
+
+        scope.openAuthLink = function (){
+            authLinkPromise.then(function(response){
+                var link = response.data.url;
+                $window.open(link);
+            });
+        }
 
         $compile(element.contents())(scope);
     };

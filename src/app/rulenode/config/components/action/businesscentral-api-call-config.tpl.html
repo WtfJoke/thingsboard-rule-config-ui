@@ -34,6 +34,12 @@
                 </md-option>
             </md-select>
     </md-input-container>
+    <div layout="row">
+            <md-button ng-click="openAuthLink($event)"
+                       class="md-primary md-raised">
+                       {{ authLinkName }}
+            </md-button>
+    </div>
     <label translate class="tb-title">tb.rulenode.headers</label>
     <div class="tb-hint" translate>tb.rulenode.headers-hint</div>
     <tb-kv-map-config

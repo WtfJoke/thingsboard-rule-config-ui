@@ -17,6 +17,12 @@
 -->
 
 <section ng-form name="businessCentralApiCallConfigForm" layout="column">
+    <div layout="row">
+        <md-button ng-click="openAuthLink($event)"
+                   class="md-primary md-raised">
+                   {{ authLinkName }}
+        </md-button>
+    </div>
     <md-input-container class="md-block">
         <input ng-required="true" name="endpointUrlPattern" ng-model="configuration.restEndpointUrlPattern"/>
         <label translate>tb.rulenode.endpoint-url-pattern</label>
@@ -34,12 +40,6 @@
                 </md-option>
             </md-select>
     </md-input-container>
-    <div layout="row">
-            <md-button ng-click="openAuthLink($event)"
-                       class="md-primary md-raised">
-                       {{ authLinkName }}
-            </md-button>
-    </div>
     <label translate class="tb-title">tb.rulenode.headers</label>
     <div class="tb-hint" translate>tb.rulenode.headers-hint</div>
     <tb-kv-map-config

@@ -27,7 +27,6 @@ export default function BusinessCentralApiCallConfigDirective($compile, ruleNode
 
     var linker = function (scope, element, attrs, ngModelCtrl) {
         var template = businessCentralApiCallConfigForm;
-        scope.authLinkName = "Authorize";
         element.html(template);
 
         scope.ruleNodeTypes = ruleNodeTypes;

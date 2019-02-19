@@ -41,9 +41,11 @@ export default function BusinessCentralApiCallConfigDirective($compile, ruleNode
             scope.configuration = ngModelCtrl.$viewValue;
         };
      
-        var authLinkPromise = $http.get("api/v1/bclink");
+      
 
         scope.openAuthLink = function (){
+            var config = {assetId: scope.configuration.assetId}
+            var authLinkPromise = $http.get("api/v1/bclink", config);
             authLinkPromise.then(function(response){
                 var link = response.data.url;
                 $window.open(link);

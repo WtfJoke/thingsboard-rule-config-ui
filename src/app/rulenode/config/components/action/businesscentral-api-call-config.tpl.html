@@ -17,6 +17,20 @@
 -->
 
 <section ng-form name="businessCentralApiCallConfigForm" layout="column">
+    <md-input-container class="md-block">
+            <input ng-required="true" name="assetId" ng-model="configuration.assetId"/>
+            <label translate>tb.rulenode.assetId</label>
+            <div ng-messages="businessCentralApiCallConfigForm.endpointUrlPattern.$error">
+                <div ng-message="required" translate>tb.rulenode.endpoint-url-pattern-required</div>
+            </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <input ng-required="true" name="tenantId" ng-model="configuration.tenantId"/>
+        <label translate>tb.rulenode.tenantId</label>
+        <div ng-messages="businessCentralApiCallConfigForm.tenantId.$error">
+            <div ng-message="required" translate>tb.rulenode.endpoint-url-pattern-required</div>
+        </div>
+    </md-input-container>
     <div layout="row">
         <md-button ng-click="openAuthLink($event)"
                    class="md-primary md-raised">

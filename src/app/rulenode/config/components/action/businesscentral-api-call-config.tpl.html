@@ -21,15 +21,17 @@
             <input ng-required="true" name="assetId" ng-model="configuration.assetId"/>
             <label translate>tb.rulenode.assetId</label>
             <div ng-messages="businessCentralApiCallConfigForm.assetId.$error">
-                <div ng-message="required" translate>tb.rulenode.endpoint-url-pattern-required</div>
+                <div ng-message="required" translate>tb.rulenode.assetId-required</div>
             </div>
+            <div class="tb-hint" translate>tb.rulenode.assetId-hint</div>
     </md-input-container>
     <md-input-container class="md-block">
         <input ng-required="true" name="tenantId" ng-model="configuration.tenantId"/>
         <label translate>tb.rulenode.tenantId</label>
         <div ng-messages="businessCentralApiCallConfigForm.tenantId.$error">
-            <div ng-message="required" translate>tb.rulenode.endpoint-url-pattern-required</div>
+            <div ng-message="required" translate>tb.rulenode.tenantId-required</div>
         </div>
+        <div class="tb-hint" translate>tb.rulenode.tenantId-hint</div>
     </md-input-container>
     <div layout="row">
         <md-button ng-click="openAuthLink($event)"

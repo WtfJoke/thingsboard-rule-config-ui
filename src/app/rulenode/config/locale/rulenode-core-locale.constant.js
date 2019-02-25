@@ -276,8 +276,12 @@ export default function addRuleNodeCoreLocaleEnglish($translateProvider) {
                 "output-timeseries-key-prefix": "Output timeseries key prefix",
                 "output-timeseries-key-prefix-required": "Output timeseries key prefix required.",
                 "authorize": "Authorize",
-                "tenantid": "Tenant Id",
-                "assetId": "Asset Id"
+                "tenantId": "Tenant Id",
+                "tenantId-required": "Tenant Id is required",
+                "tenantId-hint": "Tenant Id of referenced asset",
+                "assetId": "Asset Id",
+                "assetId-required": "Asset Id is required",
+                "assetId-hint": "Asset Id of OAuth2 configuration object"
             },
             "key-val": {
                 "key": "Key",
